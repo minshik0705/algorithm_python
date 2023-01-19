@@ -1,3 +1,27 @@
+'''
+5.수들의 합
+'''
+#내풀이->틀림
+'''
+import sys
+#sys.stdin=open("input.txt", "r")
+N,M=map(int,input().split())
+A=list(map(int, input().split(' ',N-1)))
+i=0
+j=1
+tot=A[i]
+cnt=0
+for i in range(N):
+    tot=A[i]  #->A[i]=M일경우를 해결 못함
+    for j in range(i+1,N):
+        tot+=A[j]
+        if tot>M:
+            tot=0
+            break
+        if tot==M:
+            cnt+=1
+        print(i, j,tot, cnt)
+'''
 import sys
 #sys.stdin = open("input.txt", 'r')
 n, m=map(int, input().split())
