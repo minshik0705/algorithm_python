@@ -24,6 +24,7 @@ lt=1
 rt=largest
 while lt<rt:
     mid=(lt+rt)//2
+    print(lt , rt, mid)
     if Count(mid)>=n:
         res=mid
         lt=mid+1
@@ -31,3 +32,32 @@ while lt<rt:
         rt=mid-1
 print(res)
 
+#내풀이
+'''
+def lineNum(mid):
+    count=0
+    for x in Line:
+        count+=(x//mid)
+    return  count
+
+K,N=map(int, input().split())
+Line=[]
+
+for i in range(K):
+    line=int(input())
+    Line.append(line)
+    
+rt=sum(Line)//N
+lt=1
+
+while lt<rt:
+    mid=(rt+lt)//2
+    print(lt, rt, mid)
+    if lineNum(mid)>=N:
+        res=mid
+        lt=mid+1
+    else:
+        rt=mid-1
+print(res)
+        
+'''
