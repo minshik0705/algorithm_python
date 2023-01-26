@@ -1,6 +1,7 @@
 '''
 8.침몰하는 타이타닉
 '''
+'''
 import sys
 from collections import deque
 #sys.stdin=open("input.txt", "r")
@@ -21,4 +22,21 @@ while p:
         p.pop()
         cnt+=1
 print(cnt)
-
+'''
+N,M=map(int,input().split())
+pas=list(map(int,input().split(' ',N-1)))
+pas.sort()
+cnt=0
+tot=0
+tmp=0
+for x in pas:
+    tot=tot+x
+    tmp+=1
+    if tmp>2:
+        cnt+=1
+        tmp=0
+        if tot>M:
+            cnt+=1
+            tot=x
+            tmp=0
+print(cnt)

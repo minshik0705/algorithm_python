@@ -1,20 +1,18 @@
 '''
 문제11723번 
 '''
-n=int(input())
+M=int(input())
 S=set()
-
-for i in range(n):
+'''
+for i in range(M):
     '''
-    op, num=map(str, input().split())
-    num=int(num)
-    '''
+    #op, num=map(str, input().split())
+    #num=int(num)
+'''
     x=input().split()
+    print(x)
     op=x[0]
-    if x[1]=='':
-        
-    num=int(x[1])
-    
+    num=x[1]
     if op=='all':
         S={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
     elif op=='empty':
@@ -33,6 +31,29 @@ for i in range(n):
             S.discard(num)
         else:
             S.add(num)
-        
+'''
+for i in range(M):
+    x=input().split()
+
+    if len(x)==1:
+        op=x[0]
+    else:
+        op=x[0]
+        num=x[1]
+    if op=='all':
+        S={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+    elif op=='empty':
+        S.clear()
+    elif op=='add':
+        S.add(num)
+    elif op=='remove':
+        S.discard(num)
+    elif op=='check':
+            print(1 if int(x[1]) in S else 0)
+    elif op=='toggle':
+        if num in S:
+            S.discard(num)
+        else:
+            S.add(num)
     
         
