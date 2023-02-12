@@ -9,5 +9,5 @@ def DFS(x):
 
 n=int(input())
 DFS(n)
-            
+#nqueen 문제-> back tracking문제 
         
