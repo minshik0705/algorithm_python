@@ -10,10 +10,10 @@ heap =[]
 
 for _ in range(N):
     num = int(input().strip())
-    if num > 0:
-        heappush(heap, num)
+    if num != 0:
+        heappush(heap, (abs(num), num))
     elif num == 0:
         if heap:
-            print(heappop(heap))
+            print(heappop(heap)[1])
         else:
             print(0)
