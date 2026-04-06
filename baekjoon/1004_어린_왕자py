@@ -1,0 +1,19 @@
+import sys
+
+input = sys.stdin.readline
+
+T = int(input().strip())
+answer = []
+for _ in range(T):
+    count = 0
+    sx, sy, ex, ey = map(int, input().split())
+    n = int(input().strip())
+    for _ in range(n):
+        px, py, r = map(int, input().split())
+        s_in_planet = (px - sx) ** 2 + (py - sy) ** 2 < r ** 2
+        e_in_planet = (px - ex) ** 2 + (py - ey) ** 2 < r ** 2
+        if s_in_planet != e_in_planet:
+            count += 1
+    answer.append(count)
+for i in range(len(answer)):
+    print(answer[i])
